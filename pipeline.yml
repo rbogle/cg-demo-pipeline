@@ -8,9 +8,7 @@ jobs:
     - set_pipeline: self
       file: demo-pipeline/pipeline.yml
       var_files: 
-       - demo-pipeline/pipeline-config.yml
-       on_success:
-      
+       - demo-pipeline/pipeline-config.yml      
 
  # singular job to run our one task
  - name: run-integration-test
