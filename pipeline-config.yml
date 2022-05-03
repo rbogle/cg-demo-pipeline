@@ -1,4 +1,4 @@
-demo-pipeline-url: https://github.com/cloud.gov/cg-dummy-pipeline
+demo-pipeline-url: https://github.com/rbogle/cg-demo-pipeline
 demo-pipeline-branch: set-pipeline
 aws-db-test-git-url: https://github.com/18F/cg-labratory
 aws-db-test-git-branch: master
