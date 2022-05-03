@@ -1,0 +1,45 @@
+---
+jobs:
+ # singular job to run our one task
+ - name: run-integration-test
+   plan:
+    - in_parallel:
+       - get: demo-pipeline
+         trigger: true 
+       - get: aws-db-test
+    # singular task defined in the task yaml
+    - task:  run-test-task
+      file: demo-pipeline/tasks/task.yml
+      params:
+        CF_API_URL: ((development-cf-api-url))
+        CF_USERNAME: ((development-cf-deploy-username))
+        CF_PASSWORD: ((development-cf-deploy-password))
+        CF_ORGANIZATION: ((development-cf-organization))
+        CF_SPACE: ((development-cf-space))
+        SERVICE_PLAN: micro-psql
+        DB_TYPE: postgres
+
+resources:
+# this resource is this repo 
+- name: demo-pipeline
+  type: git
+  source:
+    uri: ((demo-pipeline-url))
+    branch: ((demo-pipeline-branch))
+# This resource has tests for a running db service. 
+- name: aws-db-test
+  type: git
+  source:
+    uri: ((aws-db-test-git-url))
+    branch: ((aws-db-test-git-branch))
+# Rhis resource for posting to slack
+- name: slack
+  type: slack-notification
+  source:
+    url: ((slack-webhook-url))
+
+resource_types:
+- name: slack-notification
+  type: docker-image
+  source:
+    repository: cfcommunity/slack-notification-resource
