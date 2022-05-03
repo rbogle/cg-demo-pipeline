@@ -6,7 +6,7 @@ aws-db-test-git-branch: master
 slack-username: concourse
 slack-icon-url: https://concourse-ci.org/images/logo-white.svg
 
-# The following vars used int he pipeline are stored in credhub 
+# The following vars used in the pipeline are stored in credhub 
 # slack-webhook-url: 
 # slack-channel: 
 # development-cf-api-url: 

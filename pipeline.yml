@@ -9,13 +9,15 @@ jobs:
       file: demo-pipeline/pipeline.yml
       var_files: 
        - demo-pipeline/pipeline-config.yml
+       on_success:
+      
 
  # singular job to run our one task
  - name: run-integration-test
    plan:
     - in_parallel:
        - get: demo-pipeline
-         trigger: true 
+         passed: set-self
        - get: aws-db-test
     # singular task defined in the task yaml
     - task:  run-test-task
