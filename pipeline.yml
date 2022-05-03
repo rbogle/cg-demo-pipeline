@@ -6,9 +6,9 @@ jobs:
     - get: demo-pipeline
       tigger: true
     - set-pipeline: self
-      file: demo-pipelines/pipeline.yml
+      file: demo-pipeline/pipeline.yml
       var_files: 
-       - demo-pipelines/pipeline-config.yml
+       - demo-pipeline/pipeline-config.yml
 
  # singular job to run our one task
  - name: run-integration-test
