@@ -1,5 +1,15 @@
 ---
 jobs:
+ - name: set-self
+   public: true
+   plan:
+    - get: demo-pipeline
+      tigger: true
+    - set-pipeline: self
+      file: demo-pipelines/pipeline.yml
+      var_files: 
+       - demo-pipelines/pipeline-config.yml
+
  # singular job to run our one task
  - name: run-integration-test
    plan:
