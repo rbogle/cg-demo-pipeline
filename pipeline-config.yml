@@ -4,7 +4,7 @@ aws-db-test-git-url: https://github.com/18F/cg-labratory
 aws-db-test-git-branch: master
 
 slack-username: concourse
-slack-icon-url: https://concourse-ci.org/images/logo-white.svg
+slack-icon-url: https://avatars1.githubusercontent.com/u/7809479?v=3&s=40
 
 # The following vars used in the pipeline are stored in credhub 
 # slack-webhook-url: 

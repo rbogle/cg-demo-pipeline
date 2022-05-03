@@ -12,6 +12,7 @@ jobs:
 
  # singular job to run our one task
  - name: run-integration-test
+   serial: true
    plan:
     - in_parallel:
        - get: demo-pipeline
