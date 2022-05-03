@@ -12,7 +12,9 @@ As a starter for your own use this repo as a template. Find the `Use this templa
 - Update or fill in the missing variables to match the new repo and other credentials
 - Create a concourse pipeline:
 
-    fly -t prod set-pipeline -p ${pipeline_name} -c ./pipeline.yml -l ./credentials.yml
+```sh
+fly -t prod set-pipeline -p ${pipeline_name} -c ./pipeline.yml -l ./credentials.yml
+```
 
 - Head over to concourse to see what the pipeline is doing, and start it if it hasnt already begun.
 
