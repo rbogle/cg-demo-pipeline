@@ -1,7 +1,6 @@
 ---
 jobs:
  - name: set-self
-   serial_groups: [serial]
    public: true
    plan:
     - get: demo-pipeline
@@ -13,10 +12,11 @@ jobs:
 
  # singular job to run our one task
  - name: run-integration-test
-   serial_groups: [serial]
    plan:
     - in_parallel:
        - get: demo-pipeline
+         passed: [set-self]
+         trigger: true
        - get: aws-db-test
     # singular task defined in the task yaml
     - task:  run-test-task
