@@ -8,12 +8,11 @@ As a starter for your own use this repo as a template. Find the `Use this templa
 
 ## Usage
 
-- Rename or copy the `credentials-example.yml` file to `credentials.yml`
-- Update or fill in the missing variables to match the new repo and other credentials
-- Create a concourse pipeline:
+- Insert or update the sensitive variables to credhub commented out in `pipeline-config.yml`
+- Create the concourse pipeline:
 
 ```sh
-fly -t prod set-pipeline -p ${pipeline_name} -c ./pipeline.yml -l ./credentials.yml
+fly -t prod set-pipeline -p ${pipeline_name} -c ./pipeline.yml -l ./pipeline-config.yml
 ```
 
 - Head over to concourse to see what the pipeline is doing, and start it if it hasnt already begun.
