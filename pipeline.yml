@@ -20,7 +20,7 @@ jobs:
          trigger: true
        - get: aws-db-test
     # singular task defined in the task yaml
-    - task:  run-integration-test
+    - task:  run-integration-task
       file: demo-pipeline/tasks/task.yml
       params:
         CF_API_URL: ((development-cf-api-url))
