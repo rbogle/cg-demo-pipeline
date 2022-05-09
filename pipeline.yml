@@ -23,11 +23,11 @@ jobs:
     - task:  run-integration-task
       file: demo-pipeline/tasks/task.yml
       params:
-        CF_API_URL: ((development-cf-api-url))
-        CF_USERNAME: ((development-cf-deploy-username))
-        CF_PASSWORD: ((development-cf-deploy-password))
-        CF_ORGANIZATION: ((development-cf-organization))
-        CF_SPACE: ((development-cf-space))
+        CF_API_URL: ((development.cf-api-url))
+        CF_USERNAME: ((development.cf-deploy-username))
+        CF_PASSWORD: ((development.cf-deploy-password))
+        CF_ORGANIZATION: ((development.cf-organization))
+        CF_SPACE: ((development.cf-space))
         SERVICE_PLAN: micro-psql
         DB_TYPE: postgres
       on_failure:
